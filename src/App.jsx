@@ -1,16 +1,18 @@
-import React from 'react'
-import Card from './components/UI/Card';
-import Login from './components/Login/Login';
+import React, { useState } from "react";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Card from "./components/UI/Card";
 
-const App = ()=>
-{
-  return(
-    
-    <Card>
-      <Login></Login>
-    </Card>
-    
-  )
-}
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  return (
+    <>
+    {
+      isAuthenticated ? <Dashboard setIsAuthenticated = {setIsAuthenticated}></Dashboard>:
+  
+      <Card   setIsAuthenticated = {setIsAuthenticated}></Card>
+    }
+    </>
+  );
+};
 
 export default App;
