@@ -8,7 +8,9 @@ const Dashboard = (props) => {
           <h1>Welcome Back</h1>
         </div>
         <div className = {classes.logout}>
-          <button onClick = {()=>props.setIsAuthenticated(false)}>Logout</button>
+          <button onClick = {()=>{localStorage.clear(), 
+          props.setIsAuthenticated(false)
+          }}>Logout</button>
         </div>
       </div>
     </div>
